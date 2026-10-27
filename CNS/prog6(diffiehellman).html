@@ -1,0 +1,50 @@
+nano diffiehellman.html
+
+  GNU nano 8.7.1                diffiehellman.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diffie-Hellman Key Exchange</title>
+</head>
+<body>
+    <h2>Diffie-Hellman Key Exchange</h2>
+
+    <button onclick="calculate()">Generate Shared Key</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        function calculate() {
+            // Public values
+            let p = 23;
+            let g = 5;
+
+            // Private keys
+            let a = 6;
+            let b = 15;
+
+            // Public keys
+            let A = (g ** a) % p;
+            let B = (g ** b) % p;
+
+            // Shared secret keys
+            let keyA = (B ** a) % p;
+            let keyB = (A ** b) % p;
+
+            document.getElementById("result").textContent =
+                "Public Prime (p): " + p +
+                "\nGenerator (g): " + g +
+                "\nAlice's Private Key: " + a +
+                "\nBob's Private Key: " + b +
+                "\nAlice's Public Key: " + A +
+                "\nBob's Public Key: " + B +
+                "\nAlice's Shared Key: " + keyA +
+                "\nBob's Shared Key: " + keyB +
+                "\nKeys Match: " + (keyA === keyB);
+        }
+    </script>
+</body>
+</html>
+
+
+explorer.exe diffiehellman.html
