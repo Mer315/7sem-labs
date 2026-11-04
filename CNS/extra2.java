@@ -76,3 +76,22 @@ public class UpperClient {
         sc.close();
     }
 }
+
+
+// output:
+// client
+// Enter message: hello
+// Server: HELLO
+
+// Enter message: good morning
+// Server: GOOD MORNING
+
+// Enter message: bye
+// Server: bye
+
+// server
+// Server waiting...
+// Client connected!
+// Client: hello
+// Client: good morning
+// Client: bye
