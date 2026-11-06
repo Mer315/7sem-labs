@@ -1,22 +1,10 @@
-// create file
-nano extra1.l
-
-//code 
+code:
 %{
 #include <stdio.h>
 
-int a = 0, e = 0, i = 0, o = 0, u = 0, total = 0;
-%}
+int a=0, e=0, i=0, o=0, u=0, total=0;
 
-%%
-
-[aA]   { a++; total++; }
-[eE]   { e++; total++; }
-[iI]   { i++; total++; }
-[oO]   { o++; total++; }
-[uU]   { u++; total++; }
-
-\n
+void display()
 {
     printf("\nNumber of vowels = %d\n\n", total);
     printf("Vowel counts:\n");
@@ -26,8 +14,19 @@ int a = 0, e = 0, i = 0, o = 0, u = 0, total = 0;
     printf("o : %d\n", o);
     printf("u : %d\n", u);
 }
+%}
 
-. ;
+%%
+
+[aA] { a++; total++; }
+[eE] { e++; total++; }
+[iI] { i++; total++; }
+[oO] { o++; total++; }
+[uU] { u++; total++; }
+
+\n  { display(); return 0; }
+
+.   ;
 
 %%
 
@@ -43,10 +42,18 @@ int main()
     return 0;
 }
 
+lex vowels.l
+gcc lex.yy.c -o output -lfl
+./output
 
-//compile
-flex extra1.l
-gcc lex.yy.c -o extra1 -lfl
+Enter a string:
+Sumedha Vithala
 
-// run
-./extra1
+Number of vowels = 6
+
+Vowel counts:
+a : 3
+e : 1
+i : 1
+o : 0
+u : 1
