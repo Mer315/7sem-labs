@@ -1,8 +1,8 @@
+code:
 #include <stdio.h>
 #include <string.h>
 
-struct Symbol
-{
+struct Symbol {
     char name[20];
     char type[20];
     int value;
@@ -16,22 +16,27 @@ int main()
     printf("Enter number of symbols: ");
     scanf("%d", &n);
 
+    if (n < 1 || n > 100) {
+        printf("Invalid number of symbols\n");
+        return 0;
+    }
+
     for(i = 0; i < n; i++)
     {
         printf("\nEnter Symbol Name: ");
-        scanf("%s", table[i].name);
+        scanf("%19s", table[i].name);
 
         printf("Enter Data Type: ");
-        scanf("%s", table[i].type);
+        scanf("%19s", table[i].type);
 
         printf("Enter Value: ");
         scanf("%d", &table[i].value);
     }
 
     printf("\nSYMBOL TABLE\n");
-    printf("---------------------------------\n");
+    printf("-------------------------\n");
     printf("Name\tType\tValue\n");
-    printf("---------------------------------\n");
+    printf("-------------------------\n");
 
     for(i = 0; i < n; i++)
     {
@@ -44,9 +49,25 @@ int main()
     return 0;
 }
 
+Enter number of symbols: 2
+
+Enter Symbol Name: a
+Enter Data Type: int
+Enter Value: 20
+
+Enter Symbol Name: b
+Enter Data Type: str
+Enter Value: abc
+
+SYMBOL TABLE
+-------------------------
+Name    Type    Value
+-------------------------
+a       int     20
+b       str     0
 
 
 // to run it
 nano prog1.c
-gcc prog1.c -o prog1
-./prog1
+gcc prog1.c -o output
+./output
