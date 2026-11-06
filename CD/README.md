@@ -1,76 +1,40 @@
-# Common Commands for All Flex Programs
+# Compiler Design Lab – Programs
 
-## Install Flex (Only Once)
+## PART A – Additional Programs (7)
 
-If Flex is not installed, run:
+| No. | Program | Filename |
+|---|---|---|
+| Extra 1 | Count Number of Vowels | `extra1.l` |
+| Extra 2 | Count Characters, Tabs, Spaces and Reserved Words | `extra2.l` |
+| Extra 3 | Check Whether an Integer Is Positive or Negative | `extra3.l` |
+| Extra 4 | Check Pattern Occurrences and Count Matches | `extra4.l` |
+| Extra 5 | Count Words with Length > 5 and < 10 | `extra5.l` |
+| Extra 6 | Additional Lex Program | `extra6.l` |
+| Extra 7 | Calculate FOLLOW Set | `extra7.c` |
 
-```bash
-sudo apt update
-sudo apt install flex bison
-```
+## PART B – Regular Lab Programs
 
----
+### Cycle 1
 
-## Workflow for Every `.l` Program
+| No. | Program | Filename |
+|---|---|---|
+| 1 | Implementation of Symbol Table | `prog1.c` |
+| 2 | Develop a Lexical Analyzer in C | `prog2.c` |
+| 3 | Implementation of Lexical Analyzer Using Lex | `prog3.l` |
+| 4 | Count Number of Words and Lines Using Lex | `prog4.l` |
+| 5(a) | YACC – Arithmetic Expression Recognition | `prog5a.c` |
+| 5(b) | YACC – Variable Identifier Recognition | `prog5b.c` |
+| 5(c) | Calculator Using Lex and YACC | `prog5c.c` |
+| 6 | Generate Abstract Syntax Tree Using YACC | `prog6.c` |
 
-### Step 1: Create the Lex File
+### Cycle 2
 
-```bash
-nano filename.l
-```
-
-Paste the program, then save and exit:
-
-- **Ctrl + O** → Save
-- **Enter** → Confirm filename
-- **Ctrl + X** → Exit
-
----
-
-### Step 2: Compile the Program
-
-```bash
-flex filename.l
-gcc lex.yy.c -o outputname -lfl
-```
-
-Replace:
-- `filename.l` with your Lex file name.
-- `outputname` with the executable name you want.
-
-Example:
-
-```bash
-flex prog3.l
-gcc lex.yy.c -o prog3 -lfl
-```
-
----
-
-### Step 3: Run the Program
-
-```bash
-./outputname
-```
-
-Example:
-
-```bash
-./prog3
-```
-
----
-
-## Summary
-
-This exact sequence will work for all your `.l` (Flex) programs in the Compiler Design Lab.
-
-```bash
-nano filename.l
-
-flex filename.l
-
-gcc lex.yy.c -o outputname -lfl
-
-./outputname
-```
+| No. | Program | Filename |
+|---|---|---|
+| 7 | Top-Down Parser Using YACC | `prog7.c` |
+| 8 | Evaluate Algebraic Expressions Using YACC | `prog8.y` |
+| 9 | Type Checking of Expressions | `prog9.y` |
+| 10 | Storage Allocation Strategy (Stack) | `prog10.c` |
+| 11(a) | Recursive Descent Parser – Arithmetic Grammar | `prog11a.c` |
+| 11(b) | Recursive Descent Parser – List Grammar | `prog11b.c` |
+| 12 | Calculate FIRST Set | `prog12.c` |
