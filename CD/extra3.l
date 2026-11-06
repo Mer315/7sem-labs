@@ -1,21 +1,17 @@
-// create file
-nano exprog3.l
+code:
 
-//code
 %{
 #include <stdio.h>
 #include <stdlib.h>
 %}
 
 %%
-
-[-]?[0-9]+
-{
+[-]?[0-9]+ {
     int n = atoi(yytext);
 
-    if(n > 0)
+    if (n > 0)
         printf("Positive Integer\n");
-    else if(n < 0)
+    else if (n < 0)
         printf("Negative Integer\n");
     else
         printf("Zero\n");
@@ -23,28 +19,25 @@ nano exprog3.l
 
 [ \t\n]+ ;
 
-.
-{
+. {
     printf("Invalid Input\n");
 }
-
 %%
 
-int yywrap()
-{
+int yywrap() {
     return 1;
 }
 
-int main()
-{
+int main() {
     printf("Enter an integer:\n");
     yylex();
     return 0;
 }
 
-//compile
-flex exprog3.l
-gcc lex.yy.c -o exprog3 -lfl
+lex prog.c
+gcc lex.yy.c -o output -lfl
+./output
 
-//run
-./exprog3
+Enter an integer:
+-25
+Negative Integer
