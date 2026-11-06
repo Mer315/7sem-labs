@@ -1,8 +1,4 @@
-E → E + T
-E → T
-T → T * F
-T → F
-F → (E) | id
+code:
 
 #include <stdio.h>
 
@@ -16,71 +12,54 @@ void T();
 void TP();
 void F();
 
-void E()
-{
+void E() {
     T();
     EP();
 }
 
-void EP()
-{
-    if(input[pos] == '+')
-    {
+void EP() {
+    if (input[pos] == '+') {
         pos++;
         T();
         EP();
     }
 }
 
-void T()
-{
+void T() {
     F();
     TP();
 }
 
-void TP()
-{
-    if(input[pos] == '*')
-    {
+void TP() {
+    if (input[pos] == '*') {
         pos++;
         F();
         TP();
     }
 }
 
-void F()
-{
-    if(input[pos] == 'i')
-    {
+void F() {
+    if (input[pos] == 'i')
         pos++;
-    }
-
-    else if(input[pos] == '(')
-    {
+    else if (input[pos] == '(') {
         pos++;
-
         E();
-
-        if(input[pos] == ')')
+        if (input[pos] == ')')
             pos++;
         else
             error = 1;
     }
-
     else
-    {
         error = 1;
-    }
 }
 
-int main()
-{
+int main() {
     printf("Enter Expression: ");
     scanf("%s", input);
 
     E();
 
-    if(error == 0 && input[pos] == '\0')
+    if (error == 0 && input[pos] == '\0')
         printf("String Accepted\n");
     else
         printf("String Rejected\n");
@@ -88,16 +67,6 @@ int main()
     return 0;
 }
 
-
-//compile and run
 nano prog11a.c
-
-gcc prog11a.c -o prog11a
-
-./prog11a
-
-// accepted
-  i+i*i
-
-// rejected
-  i+*i
+gcc prog11a.c -o output
+./output
