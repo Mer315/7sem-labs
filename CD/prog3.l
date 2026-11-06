@@ -1,43 +1,58 @@
+code:
 %{
 #include <stdio.h>
 %}
 
-ID      [a-zA-Z][a-zA-Z0-9]*
-OP      [+\-*/=%]
-SPEC    [.,;:(){}[\]]
+ID      [a-zA-Z_][a-zA-Z0-9_]*
+NUM     [0-9]+
+OP      [+\-*/=%<>]
+SPEC    [][.,;:(){}]
 
 %%
 
-{ID}        { printf("%s\t: Identifier\n", yytext); }
+"int"|"float"|"char"|"if"|"else"|"while"|"for"|"return"|"void"|"double"  { printf("%s : Keyword\n", yytext); }
 
-{OP}        { printf("%s\t: Operator\n", yytext); }
+{ID}    { printf("%s : Identifier\n", yytext); }
 
-{SPEC}      { printf("%s\t: Special Symbol\n", yytext); }
+{NUM}   { printf("%s : Constant\n", yytext); }
+
+{OP}    { printf("%s : Operator\n", yytext); }
+
+{SPEC}  { printf("%s : Special Symbol\n", yytext); }
 
 [ \t\n]+    ;
 
-.           { printf("%s\t: Unknown\n", yytext); }
+.       { printf("%s : Unknown\n", yytext); }
 
 %%
 
-int yywrap()
-{
-    return 1;
-}
-
 int main()
 {
+    printf("Enter input:\n");
     yylex();
     return 0;
 }
 
-// to run
-sudo apt install flex bison
 
-nano prog3.l
+rm -f lex.yy.c output
+lex prog3.l
+gcc lex.yy.c -o output -lfl
+./output
 
-flex prog3.l
+int a = 10;
+float b = 20;
+a+b
 
-gcc lex.yy.c -o prog3 -lfl
-
-./prog3
+int : Keyword
+a : Identifier
+= : Operator
+10 : Constant
+; : Special Symbol
+float : Keyword
+b : Identifier
+= : Operator
+20 : Constant
+; : Special Symbol
+a : Identifier
++ : Operator
+b : Identifier
