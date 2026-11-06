@@ -1,17 +1,16 @@
+code:
+
 %{
 #include <stdio.h>
 
-int lines = 0;
-int words = 0;
+int lines = 0, words = 0;
 %}
 
 %%
 
-[ \t]+          ;
-
-\n              { lines++; }
-
-[^ \t\n]+       { words++; }
+[ \t]+      ;
+\n          { lines++; }
+[^ \t\n]+   { words++; }
 
 %%
 
@@ -26,9 +25,9 @@ int main()
 
     yylex();
 
-    if(words > 0 && lines == 0)
+    if (words > 0 && lines == 0)
         lines = 1;
-    else if(words > 0)
+    else if (words > 0)
         lines++;
 
     printf("\nNumber of lines = %d\n", lines);
@@ -37,15 +36,12 @@ int main()
     return 0;
 }
 
+lex prog4.l
+gcc lex.yy.c -o output -lfl
+./output
 
-// to run
-nano prog4.l
+Enter the text (Press Ctrl+D to end input):
+I am SUmedha
 
-flex prog4.l
-
-gcc lex.yy.c -o prog4 -lfl
-
-./prog4
-
-// finish input using
-Ctrl + D
+Number of lines = 2
+Number of words = 3
