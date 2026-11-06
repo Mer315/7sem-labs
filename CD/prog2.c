@@ -1,3 +1,5 @@
+code:
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -11,9 +13,8 @@ int isKeyword(char str[])
 {
     int n = sizeof(keywords) / sizeof(keywords[0]);
 
-    for(int i = 0; i < n; i++)
-    {
-        if(strcmp(str, keywords[i]) == 0)
+    for (int i = 0; i < n; i++) {
+        if (strcmp(str, keywords[i]) == 0)
             return 1;
     }
 
@@ -29,61 +30,81 @@ int main()
 
     int i = 0;
 
-    while(input[i] != '\0')
-    {
-        if(isspace(input[i]))
-        {
+    while (input[i] != '\0') {
+
+        if (isspace(input[i])) {
             i++;
             continue;
         }
 
-        if(isalpha(input[i]) || input[i] == '_')
-        {
+        /* Single-line comment */
+        if (input[i] == '/' && input[i+1] == '/') {
+            printf("// --> Comment\n");
+            break;
+        }
+
+        /* Multi-line comment */
+        if (input[i] == '/' && input[i+1] == '*') {
+            printf("/* --> Comment\n");
+            i += 2;
+
+            while (input[i] != '\0' &&
+                   !(input[i] == '*' && input[i+1] == '/'))
+                i++;
+
+            if (input[i] != '\0')
+                i += 2;
+
+            continue;
+        }
+
+        /* Identifier or Keyword */
+        if (isalpha(input[i]) || input[i] == '_') {
             char token[50];
             int j = 0;
 
-            while(isalnum(input[i]) || input[i] == '_')
-            {
-                token[j++] = input[i++];
+            while (isalnum(input[i]) || input[i] == '_') {
+                if (j < 49)
+                    token[j++] = input[i];
+                i++;
             }
 
             token[j] = '\0';
 
-            if(isKeyword(token))
+            if (isKeyword(token))
                 printf("%s --> Keyword\n", token);
             else
                 printf("%s --> Identifier\n", token);
         }
 
-        else if(isdigit(input[i]))
-        {
+        /* Constant */
+        else if (isdigit(input[i])) {
             char num[50];
             int j = 0;
 
-            while(isdigit(input[i]))
-            {
-                num[j++] = input[i++];
+            while (isdigit(input[i]) || input[i] == '.') {
+                if (j < 49)
+                    num[j++] = input[i];
+                i++;
             }
 
             num[j] = '\0';
-
             printf("%s --> Constant\n", num);
         }
 
-        else if(strchr("+-*/=%<>!", input[i]))
-        {
+        /* Operator */
+        else if (strchr("+-*/=%<>!", input[i])) {
             printf("%c --> Operator\n", input[i]);
             i++;
         }
 
-        else if(strchr("(){}[],;#", input[i]))
-        {
+        /* Special Symbols */
+        else if (strchr("(){}[],;#", input[i])) {
             printf("%c --> Special Symbol\n", input[i]);
             i++;
         }
 
-        else
-        {
+        else {
             printf("%c --> Unknown\n", input[i]);
             i++;
         }
@@ -92,8 +113,13 @@ int main()
     return 0;
 }
 
-
-//to run it
-nano prog2.c
-gcc prog2.c -o prog2
-./prog2
+gcc prog2.c -o output
+./output
+    
+Enter a C statement:
+int a = 20;
+int --> Keyword
+a --> Identifier
+= --> Operator
+20 --> Constant
+; --> Special Symbol
