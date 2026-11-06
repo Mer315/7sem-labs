@@ -1,7 +1,4 @@
-S → (L)
-S → a
-L → L,S
-L → S
+code:
 
 #include <stdio.h>
 
@@ -13,54 +10,40 @@ void S();
 void L();
 void L1();
 
-void S()
-{
-    if(input[pos] == 'a')
-    {
+void S() {
+    if (input[pos] == 'a')
         pos++;
-    }
-
-    else if(input[pos] == '(')
-    {
+    else if (input[pos] == '(') {
         pos++;
-
         L();
-
-        if(input[pos] == ')')
+        if (input[pos] == ')')
             pos++;
         else
             error = 1;
     }
-
     else
-    {
         error = 1;
-    }
 }
 
-void L()
-{
+void L() {
     S();
     L1();
 }
 
-void L1()
-{
-    while(input[pos] == ',')
-    {
+void L1() {
+    while (input[pos] == ',') {
         pos++;
         S();
     }
 }
 
-int main()
-{
+int main() {
     printf("Enter String: ");
     scanf("%s", input);
 
     S();
 
-    if(error == 0 && input[pos] == '\0')
+    if (error == 0 && input[pos] == '\0')
         printf("String Accepted\n");
     else
         printf("String Rejected\n");
@@ -68,15 +51,13 @@ int main()
     return 0;
 }
 
-
-//compile and run
 nano prog11b.c
+gcc prog11b.c -o output
+./output
 
-gcc prog11b.c -o prog11b
-
-./prog11b
-
-// accepted
-  (a)
-// rejected
-  ()
+Enter String: a
+String Accepted
+Enter String: (a,(a,a))
+String Accepted
+Enter String: (a,)
+String Rejected
