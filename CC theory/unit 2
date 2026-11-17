@@ -1,0 +1,189 @@
+Unit 2
+
+CLOUD DEPLOYMENT MODELS
+1. private
+2. public
+3.community
+4. hybrid
+
+CLOUD SERVICE MODELS
+Saas
+Paas
+IaaS
+
+TECHNOLOGICAL DRIVERS FOR CLOUD COMPUTING
+SOA and Cloud
+Multicore technology
+
+-------------------------------------------------------
+
+SOA - service oriented architecture
+its an arch approach in which an appl is div into independent servies that communicate with each other over a network
+we divide one huge appl into small reusable services
+
+COMPONENTS OF SOA 
+service provider (WSDL/UDDI)
+service consumer/requester (UDDI)
+service registry (SOAP/HTTP)
+
+PFB
+they do Publish-> FInd -> Bind
+
+
+GUIDING PRINCIPLES OF SOA
+
+1. Standardized Service Contract
+2. Loose Coupling
+3. Abstraction
+4. Reusability
+5. Composability
+6. Discoverability
+Meaning in simple language:
+• Standardized Service Contract → Services follow a defined interface.
+• Loose Coupling → Services have minimal dependency on each other.
+• Abstraction → Internal implementation is hidden from the user.
+• Reusability → Same service can be reused by different applications.
+• Composability → Multiple services can be combined to create a larger application.
+• Discoverability → Services can be easily found. 
+
+SLARCD
+
+
+goals of CCOA (cloud computing open architecture)
+1. Develop an architecture that is reusable and scalable.
+2. Allow future changes without replacing the entire architecture.
+3. Develop a uniform platform for cloud application development.
+4. Support efficient business operations.
+Benefits
+• Interoperability
+• Portability
+• Scalability
+• Better service quality
+
+----------------------------------------------------------------
+
+MULTICORE TECHNOLOGY
+
+2 or more processing core integrated into a single CPU chip
+why this?
+higher perf
+lower power consumption
+better multitasking
+faster processing
+
+
+ROLE OF MULTICORE TECH IN CC
+
+Process user requests
+• Run virtual machines
+• Handle storage operations
+• Execute applications
+
+differences
+
+SOA 							Multicore
+Software architecture 				Processor architecture
+Divides application into services 		Divides processing into cores
+Focuses on service communication 		Focuses on parallel processing
+Provides reusability and loose coupling 	Provides performance and multitasking
+Helps cloud applications communicate 		Helps cloud infrastructure processworkloads
+
+-------------------------------------------------------------------------------------------
+
+
+WEB 2.0
+
+2nd gen of web tech . 
+users can read and also create share edit and collab on online content.
+Tim O'Reily in 2004
+web1.0 - read only
+web 2.0 - read write share
+
+ex: Wikipedia, blogs
+characteristics
+folksonomy (tags)
+rich user exp
+user as contributer
+user participation
+dispersion
+
+
+WEB 3.0
+
+semantic web.
+understands meanings and relationship between info.
+allows applications to comm over the internet.
+
+ex: travel appl uses google maps service, weather, payment services
+
+characteristics
+ubiquitous connectivity
+network computing
+open technologies
+open identity
+intelligent web
+
+
+differences
+
+Feature 		Web 2.0 			Web 3.0
+Main idea	 Interactive web 		Intelligent web
+User role 	Creates/shares content 		Interacts with intelligent systems
+Focus 		Collaboration 			Understanding and intelligence
+Technology 	Social/web applications 	AI, ML, NLP, semantic technologies
+Data 		User-generated 			Meaning/relationships between data
+Example 	Wikipedia, blogs, YouTube 	Intelligent/personalized services
+
+Easy memory:
+Web 2.0 → People interact
+Web 3.0 → Machines understand
+
+PERVASIVE COMPUTING
+devices are continuously connected and available.
+users can access services anytime anywhere.
+
+internet, wireless comm, AI , voice recog, Mobile computing
+
+ex: smart watch, smart home, smart car
+
+works in 4 layers:
+sensors
+comm network
+infrastructure platform
+applications
+
+-------------------------------------------------------------------------------------------
+
+OPERATING SYSTEM
+
+put def
+
+types:
+network OS - windows NT
+Web OS - google chrome OS
+Distributed OS
+Embedded OS - IoT , routers, TVs, IoT devices
+Cloud OS - feats: well def APIs, Security at the core, Managing virtualised workloads, workload management
+
+NWDEC
+
+-------------------------------------------------------------------------------------------
+
+APPLICATION ENVIRONMENT
+
+ADE (application dev env)
+
+collection of hw, sw, testing, tools and computing resources needed to build,test, deploy and maintain apps.
+
+ex: VS code, visual studio
+
+why ADE needed?
+support mult content types
+support multimodal interaction
+support new tech
+
+methodologies:
+dist dev - git, GitHub, gitlab
+agile dev - fast dev, continuous testing, freq releases, customer feedback
+
+
