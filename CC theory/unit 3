@@ -1,0 +1,71 @@
+- screw the previous notes made. they suck. start new.
+
+
+Unit 3
+
+Programming models are 2:
+map reduce
+cloud Haskell
+
+MAP REDUCE (map, reduce)
+map-> shuffle sort -> reduce phase 
+(basically consolidate all the duplicates and map em)
+
+working: IMSRO
+why use? large data, parallel proc, simplify shi, scalability, ft
+
+who uses: Apache Hadoop
+
+problems: overkill for small task, disk overhead, no real time proc use, bad for complex stuff (generic), time and space complexity issues are a thing for map and reduce 
+
+
+CLOUD HASKELL (process and message pass)
+- distributed appl using Haskell
+why Haskell ? functional prog lang. 
+add cloud to that and now you are communicating with other systems through a network rather than dep on shared mem 
+
+features: DCMFTN
+
+slaves processes to particular functions.
+
+- map reduce is too rigid, cloud Haskell is more flexible
+
+adv: distributed comp, concurrency, reliable comm, fault handl., type safety (thank fcking god), flexible obv.
+
+disadv: hard, communication overhead (of course auth and stuff take that overhead), network dependency, debugging tuff, Haskell niche af so not all use it.
+
+appl: same as adv.
+
+
+basically: LARGE data batch wise processing- map reduce, Multiple functions to perform> - cloud Haskell
+
+
+SOFTWARE DEV IN CC
+
+use cloud resources to train models (use compute), store data, host websites etc.
+ AWS, Azure, Amzn EC2
+
+what do you do there?
+code, test,deploy,maintain
+
+---> to do ts efficiently we have 3 approaches;
+
+1. Cloud based dev env - GitHub codespaces
+2. Cloud native appl dev -  Amazon EC2, Azure: microservices, APIs, containers, deployment tools 
+3. Cloud based collab - GitHub, GitLab
+
+(write adv and disadvs)
+
+STEPS IN CLOUD SOFTWARE DEV
+
+1. req,2. design,3. dev, 4. test, 5. depl, 6. maintenance.
+
+
+CREATING VM IN AZURE
+open virtual machines directly (built in shi)
+
+CREATING VM IN AWS 
+create instance, config key pair (everything revolves around the instance)
+
+adv and disadvantages are generic af
+
