@@ -1,0 +1,221 @@
+UNIT 1
+
+Computing paradigms
+
+1. HPC - write def 
+2. PARALLEL COMPUTING
+3. DISTRIBUTED COMPUTING ( any proximity)
+mult comp, single network
+adv: scal, redund
+4. CLUSTER COMPUTING (close proximity)
+5. GRID COMPUTING
+(unused resources shared across a network to solve blah blah)
+6. CLOUD COMPUTING
+providing resources like servers storage and dbs across internet on demand
+IMP PTS - internet passed, pay as u go, on demand, scalable
+7. BIO COMPUTING
+use of DNA and proteins to compute
+8. MOBILE COMPUTING
+whatever we use in mobile phones
+9. QUANTUM COMPUTING
+usage of qubits instead of normal bits
+10. OPTICAL COMPUTING
+use photons instead of electricity
+11. NANOCOMPUTING
+use nano size components to build these
+12.NETWORK COMPUTING
+clients use services provided by servers over a network.
+
+
+Happy People Drink Cold Grape Coffee Before Morning Quizzes On Notebooks.
+
+
+-----------------------------------------------------------------------------------
+
+CLOUD COMPUTING
+- individually creating server is high investment
+- so we got pay on demand services from AWS Azure blah blah
+
+capex vs opex 
+ capex: infra buy, initial cost high, user maintain hw, large one time inv
+ opex: renting infra, low initial cost, hw maintained by cloud provider, pay only for usage
+
+why cloud comp?
+- money save
+- pay for usage
+- access frm anywhere
+- data safety (backup)
+- easy maintenance
+
+culprit for anything is NIST (National Institute of Standards and Technology)
+throw it under the bus
+
+example: Flickr - image sharing, Drive, Dropbox,gmail, onedrive
+
+-----------------------------------------------------------------------------------------
+
+5-4-3 PRINCIPLE FOR CC
+
+5 CHARACS 4 DEPLOYMENT MODELS 3 SERVICE MODELS
+
+CHARACS
+1. on demand self service
+2. broad net access
+3. resource pooling
+4. rapid elasticity
+5. measured service
+
+DEPLOYMENT MODELS
+1. public
+2. private
+3. hybrid
+4. community cloud
+
+3 SERVICE MODELS
+1. SaaS
+2. PaaS
+3. IaaS
+
+-------------------------------------------------------------------------------------------
+cloud architecture  (OVERALL WHOLE DESIGN)
+1.user layer: 1 thin layer - high server dependance: chromebook;, 2 thick client - less server dep: windows having ms word locally;
+,
+2. network layer: user , cloud server- public cloud and private cloud;
+,
+3. cloud management layer- manage all resources from cloud
+-public cloud:AWS Azure- -private cloud: openstack, eucalyptus-
+, 
+4. hw resource layer;
+
+-----------------------------------------------------------------------------------------
+SLA : service lvl agreement. some clauses given - if failed they have to pay penality
+(99.4 THRESHOLD %)
+
+-------------------------------------------------------------------------------------------
+
+CLOUD ANATOMY (INTERNAL CLOUD STRUCT)
+
+application
+- Gmail
+• Google Docs
+• YouTube
+• Netflix
+• Dropbox
+platform
+• Google App Engine
+• Microsoft Azure App Service
+• Java Platform
+• .NET Platform 
+Infrastructure
+ • Virtual Machines (VMs)
+ • Cloud Storage
+ • AWS EC2
+ • Azure Virtual Machines 
+4. Virtualization
+ • Windows VM
+ • Linux VM
+ • Ubuntu VM 
+5. Physical Hardware
+ • Servers
+ • Hard disks
+ • CPUs
+ • RAM
+ • Network switches
+ • Data centers 
+
+APIVP
+
+------------------------------------------------------------------------------------------
+
+NETWORK CONNECTIVITY IN CC
+
+communication btw users, servers, storage, and other cloud resources
+
+types;
+public
+private
+intra cloud
+private intra cloud (write that its an SOA)
+new facets in priv networking (saas ,paas, iaas)
+path for internet traffic
+
+-------------------------------------------------------------------------------------------
+
+APPLICATIONS OF CLOUD
+sw appl that runs on cloud servers
+
+They provide:
+• Better performance
+• Scalability
+• Resource sharing
+• Pay-as-you-go billing
+• High availability
+
+cloud service models: saas , paas, iaas
+-------------------------------------------------------------------------------------------
+
+FEATURES OF CLOUD APPLS.
+ 
+1. multitenancy
+2. Elasticity
+3. heterogeneous cloud platform
+4. quantitative measurement
+5. on demand service
+
+MEHQO
+-------------------------------------------------------------------------------------------
+
+Cloud management
+
+efficient management of resources basically.
+have to maintain QoS
+
+Cloud management is of 2 types
+
+managing cloud infra
+resource management- a. resource scheduling , b. resource provisioning, c.load balancing
+factors to quantify it on- a. performance, b. functionality, c. cost
+Power consumption
+server consolidation
+load fluctuation
+cloud governance
+SLA
+SPLC - Scheduling, Provisioning, Load Balancing, Cost Optimization
+
+managing cloud application
+monitoring
+availability
+capacity adjustment
+governance
+auditing
+MACGA
+
+-------------------------------------------------------------------------------------------
+
+MIGRATING APPLICATIONS TO THE CLOUD
+
+5 PHASES
+
+1.Evaluation
+2.Migration Strategy
+Hotplug strategy - entire appl moved at once
+fusion strategy - part of appl migrated
+3.prototyping
+4.provisioning - settling all req cloud resources before launching appl.
+5.Testing
+performance testing
+load testing
+failure and recovery testing
+scale out testing
+
+EMPPT
+
+4 APPROACHES
+migrate existing appl
+start from scratch
+separate company
+buy existing cloud vendor
+
+MSSB
+
+
