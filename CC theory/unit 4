@@ -1,0 +1,87 @@
+UNIT 4
+
+NETWORKING FOR CC
+
+data center:
+facility containing large num of servers, storage devices , networking equipment,etc
+types:
+data centres that provide online services - google , yahoo
+data centres that provide resources - EC2, Azure
+
+classification based on reliability:
+4 tiers
+
+Tier 			Description 						Uptime
+Tier I 		Basic infrastructure with no redundant capacity components 	99.671%
+Tier II 	Includes redundant capacity components 				99.741%
+Tier III 	Allows maintenance without shutting down the entire data center 99.982%
+Tier IV 	Fully fault-tolerant infrastructure with extensive redundancy 	99.995%
+
+issues:
+server cost
+infra cost
+power consumption
+network perf
+reliability
+
+ARCHITECTURE OF CLASSICAL DATA CENTRES
+
+3 factors to measure :
+perf
+reliability
+scalability
+
+2 imp arch models:
+Multitier model - web server, appl server, DB server
+Server cluster model - interconnected devices one perf one task together. multiple servers come together for the needed task. used for HPC, parallel comp, HTC
+
+
+CEDC (converged enhanced data center)
+takes a virtualised data centre to make it more efficient and flexible. 
+features:
+used virtualisation for resource sharing
+IaaS and PaaS are integrated
+allocated resources automatically based on workload reqs
+supports automation and co ord of resources across diff data centres
+
+PHYSICAL ORG OF A DATA CENTRE
+ 
+its built like a supermarket aisle but racks have servers, storage devices, network equipments
+
+uses a two tier network topology
+
+cooling system
+Working of the cooling system
+1. Cold air is supplied to the front-facing aisles of server racks.
+2. Server fans draw the cold air through the equipment.
+3. The air absorbs heat from the servers.
+4. Hot air leaves from the rear of the racks.
+5. The hot air is directed toward cooling equipment, where it is cooled and circulated again
+
+Working of the cooling system
+1. Cold air is supplied to the front-facing aisles of server racks.
+2. Server fans draw the cold air through the equipment.
+3. The air absorbs heat from the servers.
+4. Hot air leaves from the rear of the racks.
+5. The hot air is directed toward cooling equipment, where it is cooled and circulated again
+
+
+NATURE OF TRAFFIC
+
+• Mice traffic = small data transfers.
+• Cat traffic = medium-sized transfers and control messages.
+• Elephant traffic = large data transfers.
+
+
+NETWORKING ISSUES IN DATA CENTRES
+
+availability
+poor network perf
+high burst tolerance
+low latency
+high throughput
+security
+
+-------------------------------------------------------------------------------------------
+
+TRANSPORT LAYER ISSUES IN DATA CENTRES
